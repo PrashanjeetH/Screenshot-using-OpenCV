@@ -8,7 +8,6 @@ while True:
 
     try:
         check, frame = webcam.read()
-        print(check)
         cv2.imshow("Capturing Images. Press 'S' to click picture.", frame)
         key = cv2.waitKey(1)
         if key == ord('s'):
@@ -24,14 +23,14 @@ while True:
             img_resized = cv2.imwrite(filename= ('./grayscale/grayscale#' + str(count) + '.jpg'), img=img_)
             print(str(count) + "# Image saved!")
             count+=1
-            
+
             #break
-        
+
         elif key == ord('q'):
             webcam.release()
             cv2.destroyAllWindows()
             break
-    
+
     except(KeyboardInterrupt):
         print("Turning off camera.")
         webcam.release()
